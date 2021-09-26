@@ -1,6 +1,6 @@
-# Upload file to oss
+# Upload OSS
 
-Upload file to oss
+Upload files to oss of aliyun
 
 ## Inputs
 
@@ -31,12 +31,12 @@ Upload file to oss
 ## Example usage
 
 ```yaml
-uses: ./.github/actions/upload-to-oss-action
+uses: nebula-actions/upload-oss
 with:
     key-id: ${{ secrets.OSS_ID }}
     key-secret: ${{ secrets.OSS_SECRET }}
     endpoint: ${{ secrets.OSS_ENDPOINT }}
-    bucket: nebula-graph
-    asset-path: build/cpack_output
-    target-path: package/v2-nightly/${{ steps.vars.outputs.subdir }}
+    bucket: oss-bucket
+    asset-path: /path/to/assets
+    target-path: /path/to/target/files
 ```

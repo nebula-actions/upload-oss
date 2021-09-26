@@ -1,4 +1,4 @@
-name: 'Upload to oss'
+name: 'Upload OSS'
 description: 'Upload files to oss'
 inputs:
   key-id:
@@ -28,6 +28,10 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - run: |
+        wget -q http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64 -O /usr/bin/ossutil64
+        chmod +x /usr/bin/ossutil64
+      shell: bash
     - run: |
         j=0
         if [ -d ${{ inputs.asset-path }} ]; then
