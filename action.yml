@@ -29,8 +29,7 @@ runs:
   using: "composite"
   steps:
     - run: |
-        wget -q http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64 -O /usr/bin/ossutil64
-        chmod +x /usr/bin/ossutil64
+        sudo -v ; curl https://gosspublic.alicdn.com/ossutil/install.sh | sudo bash
       shell: bash
     - run: |
         j=0
